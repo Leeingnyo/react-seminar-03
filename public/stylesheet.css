@@ -59,3 +59,26 @@ body {
 #main {
   flex: 1;
 }
+
+.article-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article {
+  width: 140px;
+  margin: 10px;
+}
+.article img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.article h4 {
+  margin: 0;
+}
+.article p {
+  margin: 0;
+  word-wrap: break-word;
+}
+.hashtag {
+  margin: 3px;
+}
