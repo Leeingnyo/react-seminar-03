@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TopMenu from './TopMenu';
+import SideMenu from './SideMenu';
 
 class App extends Component {
 
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div>
         <TopMenu />
+        <SideMenu />
       </div>
     );
   }
