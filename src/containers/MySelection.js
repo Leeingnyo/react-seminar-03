@@ -7,10 +7,11 @@ class MySelection extends Component {
     return (
       <section id="my-selection">
         <h2>MySelection</h2>
-        <ItemList items={this.props.registered} />
+        <ItemList items={this.props.registered} register={this.props.register} deregister={this.props.deregister} />
       </section>
     );
     // items 를 받아옴
+    // 받은 register, deregister를 또 넘겨주고 있다
   }
 }
 

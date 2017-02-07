@@ -20,6 +20,24 @@ class App extends Component {
     };
 
     this.changeMode = this.changeMode.bind(this);
+    this.register = this.register.bind(this);
+    this.deregister = this.deregister.bind(this);
+  }
+
+  register(newItem) {
+    const newRegi = this.state.registered.concat([newItem]);
+    this.setState({
+      registered: newRegi,
+    });
+  }
+
+  deregister(newItem) {
+    const newRegi = this.state.registered.filter(item => {
+      return item.name !== newItem.name;
+    });
+    this.setState({
+      registered: newRegi,
+    });
   }
 
   changeMode(mode) {
@@ -33,11 +51,12 @@ class App extends Component {
       <div id="wrapper">
         <div id="main-wrapper">
           <TopMenu />
-          <Main mode={this.state.mode} registered={this.state.registered}/>
+          <Main mode={this.state.mode} registered={this.state.registered} register={this.register} deregister={this.deregister} />
         </div>
         <SideMenu changeMode={this.changeMode} />
       </div>
     );
+    // registered랑 register랑 deregister를 넘겨주고 있다
   }
 }
 
