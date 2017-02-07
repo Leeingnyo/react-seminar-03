@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TopMenu from './containers/TopMenu';
 import SideMenu from './containers/SideMenu';
+import Main from './containers/Main';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <TopMenu />
         <SideMenu />
+        <Main />
       </div>
     );
   }
