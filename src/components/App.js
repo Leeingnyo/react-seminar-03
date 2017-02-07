@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+import TopMenu from './TopMenu';
+
 class App extends Component {
+
   render() {
     return (
-      <h1>React Seminar 3<small> - Redux</small></h1>
+      <div>
+        <TopMenu />
+      </div>
     );
   }
 }
