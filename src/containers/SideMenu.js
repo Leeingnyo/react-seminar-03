@@ -41,7 +41,7 @@ class SideMenu extends Component {
       : <button onClick={this.foldSideBar.bind(this)}>닫기</button>;
 
     return (
-      <aside className={this.state.isFolded ? 'fold' : 'unfold'}>
+      <aside id="side-menu" className={this.state.isFolded ? 'fold' : 'unfold'}>
         {foldControl}
         <nav>
           <ul>

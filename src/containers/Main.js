@@ -33,7 +33,11 @@ class Main extends Component {
         break;
     }
 
-    return view;
+    return (
+      <main id="main">
+        {view}
+      </main>
+    );
   }
 }
 

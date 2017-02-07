@@ -8,10 +8,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <TopMenu />
+      <div id="wrapper">
+        <div id="main-wrapper">
+          <TopMenu />
+          <Main />
+        </div>
         <SideMenu />
-        <Main />
       </div>
     );
   }
