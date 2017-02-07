@@ -12,6 +12,20 @@ class SideMenu extends Component {
     this.renderNavItem = this.renderNavItem.bind(this);
   }
 
+  // handle click button 열기
+  foldSideBar() {
+    this.setState({
+      isFolded: true,
+    });
+  }
+
+  // handle click button 닫기
+  unfoldSideBar() {
+    this.setState({
+      isFolded: false,
+    });
+  }
+
   renderNavItem(itemImg, itemName) {
     return (
       <li>
@@ -23,8 +37,8 @@ class SideMenu extends Component {
 
   render() {
     const foldControl = this.state.isFolded
-      ? <button>닫기</button>
-      : <button>열기</button>;
+      ? <button onClick={this.unfoldSideBar.bind(this)}>열기</button>
+      : <button onClick={this.foldSideBar.bind(this)}>닫기</button>;
 
     return (
       <aside>
