@@ -47,7 +47,7 @@ class SideMenu extends Component {
           <ul>
             {this.renderNavItem('https://maxcdn.icons8.com/windows8/PNG/512/Very_Basic/search-512.png', '검색')}
             {this.renderNavItem('http://icons.iconarchive.com/icons/iconsmind/outline/512/Box-Open-icon.png', '보관함')}
-            {this.renderNavItem('http://customwastega.com/wp-content/uploads/2015/02/noun_16193.png', '휴지통')}
+            {this.renderNavItem('https://glglgozz.leeingnyo.me/trashbin.png', '휴지통')}
           </ul>
         </nav>
       </aside>
