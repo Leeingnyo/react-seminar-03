@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import TopMenu from './TopMenu';
-import SideMenu from './SideMenu';
+import TopMenu from './containers/TopMenu';
+import SideMenu from './containers/SideMenu';
 
 class App extends Component {
 
