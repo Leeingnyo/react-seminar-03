@@ -7,9 +7,10 @@ class MySelection extends Component {
     return (
       <section id="my-selection">
         <h2>MySelection</h2>
-        <ItemList />
+        <ItemList items={this.props.registered} />
       </section>
     );
+    // items 를 받아옴
   }
 }
 

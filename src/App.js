@@ -16,6 +16,7 @@ class App extends Component {
 
     this.state = {
       mode: SEARCH_MODE,
+      registered: [],
     };
 
     this.changeMode = this.changeMode.bind(this);
@@ -32,7 +33,7 @@ class App extends Component {
       <div id="wrapper">
         <div id="main-wrapper">
           <TopMenu />
-          <Main mode={this.state.mode}/>
+          <Main mode={this.state.mode} registered={this.state.registered}/>
         </div>
         <SideMenu changeMode={this.changeMode} />
       </div>

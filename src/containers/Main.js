@@ -23,7 +23,7 @@ class Main extends Component {
         view = <Search />;
         break;
       case MY_SELECTION_MODE:
-        view = <MySelection />;
+        view = <MySelection registered={this.props.registered} />;
         break;
       case TRASH_BIN_MODE:
         view = <TrashBin />;
