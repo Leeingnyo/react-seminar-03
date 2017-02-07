@@ -13,15 +13,15 @@ class App extends Component {
   }
 
   handleClickSubtractButton() {
-    // - action 발생시키기
+    this.props.onClickSubtract(); // - action 발생시키기
   }
 
   handleClickAddButton() {
-    // + action 발생시키기
+    this.props.onClickAdd(); // + action 발생시키기
   }
 
   render() {
-    const value = 0;
+    const {value} = this.props;
     return (
       <div>
         <button onClick={this.handleClickSubtractButton}>-</button>
