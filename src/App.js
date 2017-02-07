@@ -17,6 +17,14 @@ class App extends Component {
     this.state = {
       mode: SEARCH_MODE,
     };
+
+    this.changeMode = this.changeMode.bind(this);
+  }
+
+  changeMode(mode) {
+    this.setState({
+      mode, // mode: mode, 에서 property 이름과 variable 이름이 같아서 생략 (ES6)
+    });
   }
 
   render() {
@@ -26,7 +34,7 @@ class App extends Component {
           <TopMenu />
           <Main mode={this.state.mode}/>
         </div>
-        <SideMenu />
+        <SideMenu changeMode={this.changeMode} />
       </div>
     );
   }

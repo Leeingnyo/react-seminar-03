@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
+import {
+  SEARCH_MODE,
+  MY_SELECTION_MODE,
+  TRASH_BIN_MODE,
+} from '../const';
+
 class SideMenu extends Component {
+
+  static propTypes: {
+    changeMode: React.PropTypes.func,
+  }
 
   constructor(props) {
     super(props);
@@ -9,6 +19,7 @@ class SideMenu extends Component {
       isFolded: true,
     };
 
+    this.generateHandlerClickNavItem = this.generateHandlerClickNavItem.bind(this);
     this.renderNavItem = this.renderNavItem.bind(this);
   }
 
@@ -26,9 +37,15 @@ class SideMenu extends Component {
     });
   }
 
-  renderNavItem(itemImg, itemName) {
+  generateHandlerClickNavItem(mode) {
+    return () => {
+      this.props.changeMode(mode);
+    };
+  }
+
+  renderNavItem(itemImg, itemName, mode) {
     return (
-      <li>
+      <li onClick={this.generateHandlerClickNavItem(mode)}>
         <img width="30px" src={itemImg}/>
         { this.state.isFolded ? '' : itemName }
       </li>
@@ -45,9 +62,18 @@ class SideMenu extends Component {
         {foldControl}
         <nav>
           <ul>
-            {this.renderNavItem('https://maxcdn.icons8.com/windows8/PNG/512/Very_Basic/search-512.png', '검색')}
-            {this.renderNavItem('http://icons.iconarchive.com/icons/iconsmind/outline/512/Box-Open-icon.png', '보관함')}
-            {this.renderNavItem('https://glglgozz.leeingnyo.me/trashbin.png', '휴지통')}
+            {
+              this.renderNavItem('https://maxcdn.icons8.com/windows8/PNG/512/Very_Basic/search-512.png'
+                , '검색', SEARCH_MODE)
+            }
+            {
+              this.renderNavItem('http://icons.iconarchive.com/icons/iconsmind/outline/512/Box-Open-icon.png'
+                , '보관함', MY_SELECTION_MODE)
+            }
+            {
+              this.renderNavItem('https://glglgozz.leeingnyo.me/trashbin.png'
+                , '휴지통', TRASH_BIN_MODE)
+            }
           </ul>
         </nav>
       </aside>
