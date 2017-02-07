@@ -1,0 +1,2 @@
+export const ADD_ACTION = 'ADD_ACTION';
+export const SUBTRACT_ACTION = 'SUBTRACT_ACTION';
