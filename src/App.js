@@ -51,7 +51,11 @@ class App extends Component {
       <div id="wrapper">
         <div id="main-wrapper">
           <TopMenu />
-          <Main mode={this.state.mode} registered={this.state.registered} register={this.register} deregister={this.deregister} />
+          <Main
+            mode={this.state.mode}
+            registered={this.state.registered}
+            register={this.register}
+            deregister={this.deregister} />
         </div>
         <SideMenu changeMode={this.changeMode} />
       </div>

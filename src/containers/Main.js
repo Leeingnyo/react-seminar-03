@@ -20,11 +20,17 @@ class Main extends Component {
 
     switch (this.props.mode) {
       case SEARCH_MODE:
-        view = <Search register={this.props.register} deregister={this.props.deregister} />;
+        view = <Search
+          registered={this.props.registered}
+          register={this.props.register}
+          deregister={this.props.deregister} />;
         // 받은 걸 또 넘겨주고 있다
+        // 잊어버렸던 registered 를 찾아서 넘겨주고 있다
         break;
       case MY_SELECTION_MODE:
-        view = <MySelection registered={this.props.registered} deregister={this.props.deregister} />;
+        view = <MySelection
+          registered={this.props.registered}
+          deregister={this.props.deregister} />;
         // 받은 걸 또 넘겨주고 있다
         break;
       case TRASH_BIN_MODE:
