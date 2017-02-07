@@ -8,10 +8,6 @@ import {
 
 class SideMenu extends Component {
 
-  static propTypes: {
-    changeMode: React.PropTypes.func,
-  }
-
   constructor(props) {
     super(props);
 
@@ -80,5 +76,9 @@ class SideMenu extends Component {
     );
   }
 }
+
+SideMenu.propTypes = {
+  changeMode: React.PropTypes.func,
+};
 
 export default SideMenu;
