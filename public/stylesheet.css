@@ -147,6 +147,6 @@ body {
   border: none;
   outline: none;
 }
-.controls.registered {
-  background-image: url(http://icons.veryicon.com/ico/System/Icons8%20Metro%20Style/System%20Delete.ico);
+.controls.registered button {
+  background-image: url(https://glglgozz.leeingnyo.me/trashbin.png);
 }
