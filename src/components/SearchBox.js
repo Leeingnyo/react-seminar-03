@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {dummyItems} from '../data';
+
 class SearchBox extends Component {
 
   constructor(props) {
@@ -10,6 +12,7 @@ class SearchBox extends Component {
   
   submit(e) {
     e.preventDefault();
+    this.props.updateSearchResults(dummyItems);
   }
 
   render() {
