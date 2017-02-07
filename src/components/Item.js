@@ -51,4 +51,16 @@ class Item extends Component {
   }
 }
 
+Item.defaultProps = {
+  item: {
+    hashtags: [],
+  },
+};
+
+Item.propTypes = {
+  item: React.PropTypes.shape({
+    hashtags: React.PropTypes.array,
+  }),
+};
+
 export default Item;
