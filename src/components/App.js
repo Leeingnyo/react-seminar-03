@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
+import {addAction, subtractAction} from '../actions';
 
 class App extends Component {
 
@@ -28,5 +31,20 @@ class App extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    value: state.count.value,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onClickAdd: () => { dispatch(addAction()); },
+    onClickSubtract: () => { dispatch(subtractAction()); },
+  };
+};
+
+App = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App;
