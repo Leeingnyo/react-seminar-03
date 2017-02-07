@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /*
-const dummyItem = {
+const item = {
   name: 'alphabet',
   img: 'https://images.template.net/wp-content/uploads/2015/06/Bright-Colorful-Printable-Alphabets.jpg',
   hashtags: [
@@ -13,11 +13,29 @@ const dummyItem = {
 
 class Item extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.handleClickRegister = this.handleClickRegister.bind(this);
+    this.handleClickDeregister = this.handleClickDeregister.bind(this);
+  }
+
+  handleClickRegister() {
+    this.props.register();
+  }
+
+  handleClickDeregister() {
+    this.props.deregister();
+  }
+
   render() {
     const {item} = this.props;
     const hashtags = item.hashtags.map(hashtag => {
       return <span className="hashtag" key={`${item.name}-${hashtag}`}>{`#${hashtag}`}</span>;
     });
+    const controls = this.props.isRegistered
+      ? <button onClick={this.handleClickDeregister} />
+      : <button onClick={this.handleClickRegister} />;
     return (
       <article className="article">
         <img src={item.img} />
@@ -25,13 +43,12 @@ class Item extends Component {
         <p>
           {hashtags}
         </p>
+        <div className={'controls ' + (this.props.isRegistered ? 'registered' : 'deregistered')}>
+          {controls}
+        </div>
       </article>
     );
   }
 }
-
-Item.propTypes = {
-  item: React.PropTypes.object,
-};
 
 export default Item;

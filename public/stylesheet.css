@@ -65,12 +65,17 @@ body {
   flex-wrap: wrap;
 }
 .article {
-  width: 140px;
+  position: relative;
+  width: 200px;
   margin: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid black;
 }
 .article img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid gray;
 }
 .article h4 {
   margin: 0;
@@ -81,4 +86,30 @@ body {
 }
 .hashtag {
   margin: 3px;
+}
+.controls {
+  display: none;
+}
+.article:hover .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.controls button {
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn1.iconfinder.com/data/icons/interface-3/24/Download-512.png);
+  border: none;
+  outline: none;
+}
+.controls.registered {
+  background-image: url(http://icons.veryicon.com/ico/System/Icons8%20Metro%20Style/System%20Delete.ico);
 }

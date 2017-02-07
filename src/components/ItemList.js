@@ -17,8 +17,4 @@ class ItemList extends Component {
   }
 }
 
-ItemList.propTypes = {
-  items: React.PropTypes.array,
-};
-
 export default ItemList;
