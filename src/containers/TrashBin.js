@@ -5,6 +5,7 @@ class TrashBin extends Component {
     return (
       <section id="trash-bin">
         <h2>TrashBin</h2>
+        <span>시간 없어서 안 하기로</span>
       </section>
     );
   }
