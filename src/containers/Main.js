@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
   SEARCH_MODE,
@@ -38,5 +39,12 @@ class Main extends Component {
   }
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    mode: state.app.mode,
+  };
+};
 
+Main = connect(mapStateToProps)(Main);
+
+export default Main;

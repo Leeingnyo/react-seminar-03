@@ -11,30 +11,14 @@ import {
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      mode: SEARCH_MODE,
-    };
-
-    this.changeMode = this.changeMode.bind(this);
-  }
-
-  changeMode(mode) {
-    this.setState({
-      mode, // mode: mode, 에서 property 이름과 variable 이름이 같아서 생략 (ES6)
-    });
-  }
-
   render() {
     return (
       <div id="wrapper">
         <div id="main-wrapper">
           <TopMenu />
-          <Main mode={this.state.mode}/>
+          <Main />
         </div>
-        <SideMenu changeMode={this.changeMode} />
+        <SideMenu />
       </div>
     );
   }

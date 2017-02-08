@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 import {
   SEARCH_MODE,
   MY_SELECTION_MODE,
   TRASH_BIN_MODE,
 } from '../const';
+
+import {
+  changeModeAction,
+} from '../actions';
 
 class SideMenu extends Component {
 
@@ -80,5 +85,13 @@ class SideMenu extends Component {
 SideMenu.propTypes = {
   changeMode: React.PropTypes.func,
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeMode: mode => { dispatch(changeModeAction(mode)); },
+  };
+};
+
+SideMenu = connect(null, mapDispatchToProps)(SideMenu);
 
 export default SideMenu;
