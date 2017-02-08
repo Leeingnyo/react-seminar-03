@@ -10,6 +10,7 @@ class SearchBox extends Component {
   
   submit(e) {
     e.preventDefault();
+    this.props.search();
   }
 
   render() {
