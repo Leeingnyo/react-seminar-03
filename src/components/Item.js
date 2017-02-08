@@ -21,11 +21,11 @@ class Item extends Component {
   }
 
   handleClickRegister() {
-    this.props.register();
+    this.props.register(this.props.item);
   }
 
   handleClickDeregister() {
-    this.props.deregister();
+    this.props.deregister(this.props.item);
   }
 
   render() {
